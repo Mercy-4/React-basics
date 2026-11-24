@@ -1,0 +1,27 @@
+import {useState} from "react";
+
+function Counter(){
+    //data == state == reactive
+    const [myNumber, setMyNumber] = useState(0)
+
+    //event handler
+    function btnClicked(){
+        console.log(myNumber)
+        // alert(myNumber)
+        setMyNumber(myNumber=>myNumber + 1)
+    }
+    return (
+        <>
+        <div className="container">
+            <div className="row justify-content-center">
+                <div className="col-sm-3">
+                    <h2 className="text-info text-center">{myNumber}</h2>
+                    <button className="btn btn-danger w-100" onClick={btnClicked}>Click To Count</button>
+                </div>
+            </div>
+        </div>
+
+        </>
+    )
+}
+export default Counter;
